@@ -9,7 +9,7 @@ class Category(models.Model):
     description = models.TextField(blank=True, null=True)
     total_vote = models.IntegerField(default=0)
     voters = models.ManyToManyField(User, blank=True)
-    picture = models.ImageField(upload_to="img", blank=True, null=True)
+    picture = models.ImageField(upload_to="img", blank=True, null=True) # default='profile_pics/default.jpg')
     
     def __str__(self):
         return self.title

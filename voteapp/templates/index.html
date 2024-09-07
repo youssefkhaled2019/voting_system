@@ -28,17 +28,25 @@
             
             
             {% for category in categories  %}
+            {% comment %}
+                <div class="card" style="width: 20rem; margin-bottom: 10rem; padding:0px">
+                
+                    {% if category.picture %}
+                        <img src="{{category.picture.url}}" class="card-img-top" alt="...">
+                        {% else %}
 
-            <div class="card" style="width: 20rem; margin-bottom: 10rem; padding:0px">
-                <img src="{{category.picture.url}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h2 class="fs-4 fw-bold">{{category.title}}</h2>
-                    <p class="mb-0">{{category.description | truncatechars:100}}</p>
-                    <a class="btn btn-primary btn-lg mt-4" href="{% url 'detail' category.slug  %}">Vote</a>
+                    {% endif %}
+                    <img src="{{category.picture.url}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h2 class="fs-4 fw-bold">{{category.title}}</h2>
+                        <p class="mb-0">{{category.description | truncatechars:100}}</p>
+                        <a class="btn btn-primary btn-lg mt-4" href="{% url 'detail' category.slug  %}">Vote</a>
+                        
+                    </div> 
+                
                 </div>
-            </div>
-
-            {% comment %} 
+            {% endcomment %}
+        
                 <div class="col-lg-4 col-xxl-3 mb-5">
                     <div class="card bg-light border-0 h-100">
                         <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
@@ -49,7 +57,7 @@
                         <a class="btn btn-primary btn-lg" href="{% url 'detail' category.slug  %}">Vote</a>
                     </div>
                 </div> 
-            {% endcomment %}
+           
 
           
                 

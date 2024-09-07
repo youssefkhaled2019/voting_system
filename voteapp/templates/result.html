@@ -20,7 +20,7 @@
       
       {% for item in items  %}
 
-      {% if request.user|has_voted:item.voters.all %}
+      {% if request.user|has_voted:item.voters.all %} {% comment %}  {% endcomment %}
       
       <small>{{item.title}}</strong> --- {{item.total_vote}} vote{{item.total_vote | pluralize:",s"}} ---  <strong>[voted]</strong> </small> 
       <div class="progressContainer">

@@ -29,7 +29,7 @@ def detail(request, slug):
         item.total_vote += 1
         
         item_category = item.category 
-        item_category.total_vote += 1
+        item_category.total_vote += 1 #item.category.total_vote += 1
         
         item.voters.add(request.user)
         item_category.voters.add(request.user)
